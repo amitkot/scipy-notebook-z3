@@ -1,11 +1,9 @@
 FROM jupyter/scipy-notebook
 
-LABEL maintainer="Stefan Klikovits <stefan@klikovits.net>"
-
 USER root
 
 # install (patched) z3
-RUN git clone https://github.com/stklik/z3.git
+RUN git clone https://github.com/Z3Prover/z3.git
 WORKDIR z3
 RUN python scripts/mk_make.py --python
 RUN cd build && make
